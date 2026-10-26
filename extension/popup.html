@@ -1,0 +1,11 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>视频下载</title><link rel="stylesheet" href="popup.css"></head>
+<body><main><h1 class="sr-only">视频下载</h1>
+  <section class="card" aria-labelledby="card-label"><img class="perch" src="icons/puppy-perch.png" alt="" aria-hidden="true" draggable="false"><div class="eyebrow"><span id="dot" class="dot"></span><span id="card-label">等待识别</span></div>
+    <h2 id="title">请打开并播放一个视频</h2><p id="author" class="author">正在读取当前视频…</p><div id="meta" class="meta" hidden></div>
+    <div id="quality-wrap" hidden><label for="quality">保存清晰度</label><select id="quality" aria-describedby="quality-note"></select><p id="quality-note"></p></div>
+  </section>
+  <button id="download" class="primary" disabled><span aria-hidden="true">↓</span><span id="download-label">下载当前视频</span></button>
+  <div class="secondary"><button id="refresh">↻ 重新识别</button><button id="downloads">下载记录 ↗</button></div>
+  <p id="status" class="status" role="status" aria-live="polite">只下载当前视频</p>
+  <footer>下载文件夹 / Douyin <span>v0.3.1</span></footer>
+</main><script type="module" src="popup.js"></script></body></html>

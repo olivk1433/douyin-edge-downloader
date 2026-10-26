@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "抖音视频下载",
+  "version": "0.3.1",
+  "description": "自动显示当前抖音视频下载卡片，粉色界面，按作品实际提供的清晰度保存。",
+  "minimum_chrome_version": "111",
+  "permissions": ["activeTab", "scripting", "downloads", "storage"],
+  "host_permissions": ["https://www.douyin.com/*", "https://douyin.com/*"],
+  "background": {"service_worker":"background.js", "type":"module"},
+  "content_scripts": [
+    {"matches":["https://www.douyin.com/*","https://douyin.com/*"],"js":["media-capture.js"],"run_at":"document_start","world":"MAIN"},
+    {"matches":["https://www.douyin.com/*","https://douyin.com/*"],"js":["content.js"],"run_at":"document_idle"}
+  ],
+  "web_accessible_resources": [{"resources":["icons/puppy-perch.png","icons/128.png"],"matches":["https://www.douyin.com/*","https://douyin.com/*"]}],
+  "action": {"default_popup": "popup.html", "default_title": "下载当前视频", "default_icon":{"16":"icons/16.png","32":"icons/32.png","48":"icons/48.png","128":"icons/128.png"}},
+  "icons": {"16": "icons/16.png", "32":"icons/32.png", "48": "icons/48.png", "128": "icons/128.png"}
+}
